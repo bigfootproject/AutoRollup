@@ -1,10 +1,10 @@
-This repository contains Apache Pig version 0.14.0 with a completely new ROLLUP operator. The new operator outperforms the current implementation of Pig by at least 50%. More details on the design of the operator can be found in the following paper:
-- [Efficient and Self-Balanced ROLLUP Aggregates for Large-Scale Data Summarization] (http://www.eurecom.fr/fr/publication/4590/detail/efficient-and-self-balanced-rollup-aggregates-for-large-scale-data-summarization)
+This repository contains Apache Pig version 0.14.0 with a completely new ROLLUP operator. The new operator outperforms the current implementation of Pig by **at least 50%**. More details on the design of the operator can be found in the following paper:
+- [*Efficient and Self-Balanced ROLLUP Aggregates for Large-Scale Data Summarization*] (http://www.eurecom.fr/fr/publication/4590/detail/efficient-and-self-balanced-rollup-aggregates-for-large-scale-data-summarization)
 
 The new operator utilizes the MapReduce ROLLUP algorithms proposed in the following paper:
-- [On the design space of MapReduce ROLLUP aggregates] (http://www.eurecom.fr/fr/publication/4212/detail/on-the-design-space-of-mapreduce-rollup-aggregates)
+- [*On the design space of MapReduce ROLLUP aggregates*] (http://www.eurecom.fr/fr/publication/4212/detail/on-the-design-space-of-mapreduce-rollup-aggregates)
 
-Everyone who is interested in the algorithms and the design of the new operator is greatly welcome to check out our papers. For those who are interested in using and seeing the enhancement of the new operator at hands, please find below the compiling guide:
+Everyone who is interested in the algorithms and the design of the new operator is greatly welcome to check out [our papers](http://www.eurecom.fr/fr/people/phan-duy-hung/publications). For those who are interested in using and seeing the enhancement of the new operator at hands, please find below the guide:
 
 ##Compiling Pig with the new ROLLUP operator
 Our ROLLUP operator is integrated to the latest Apache Pig version (0.14.0). It is
@@ -27,7 +27,8 @@ $ ant clean jar-withouthadoop -Dhadoopversion=23
 To take advantages of the new ROLLUP operator, users simply issue a ROLLUP query to
 Pig: our optimization automatically perform the rest. It detects the aggregations,
 samples the data to gather data and performance statistics, sets the best
-operating configuration and finally, triggers the new ROLLUP operator.
+operating configuration and finally, triggers the new ROLLUP operator. In other words, 
+our operator is *completely transparent to users*.
 
 An example of a ROLLUP query is as follow:
 
